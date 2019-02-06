@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+
+
+        
+{% block main %}
+
+<div class="row">
+        <form action="{% url 'directory:search' %}"  method="post" id="search">
+                {% csrf_token %}
+                {{ form.as_table }}
+                <div class="row">
+                        <br>
+                     <button class="btn btn-primary btn-block" type="submit"><span class="glyphicon glyphicon-search"></span>খুঁজুন</button>
+                 </div>
+        </form>
+</div>
+<br><br>
+<div class="row">
+    <div>
+            <input type="text" id="filter" onkeyup="filter_list()" placeholder="এই তালিকার মাঝে খুঁজুন..">
+    </div>
+    
+    <hr>
+
+       
+            
+                
+                <br>
+                <br>
+                
+                    <ul id="myUL">
+                        {% for person in persons_list %}
+                            <li><a href="#">
+                                <h4 class="media-heading"><span class="glyphicon glyphicon-user"></span> <span>{{ person.name | title }} </span> | <span class="glyphicon glyphicon-briefcase"></span> <span>{{ person.profession }}</span></h4>
+                                <h5><span class="glyphicon glyphicon-envelope"></span> &nbsp;<span>{{ person.address }}, {{ person.thana }}</span></h5>
+                                <h5>
+                                    <span class="glyphicon glyphicon-phone"></span> 
+                                    {% for mobile in person.mobile_set.all %}
+                                        <span><i>{{ mobile.number}} </i> </span>
+                                        {% if not forloop.last %}
+                                            ,
+                                        {% endif %}
+                                        {% empty %}
+                                        No numbers available
+                                    {% endfor %}
+                                </h5>
+
+                                <h5>
+                                    <span class="glyphicon glyphicon-phone-alt"></span> 
+                                    {% for tnt in person.telephone_set.all %}
+                                        <span><i>{{ tnt.number}} </i> </span>
+                                        {% if not forloop.last %}
+                                            ,
+                                        {% endif %}
+                                        {% empty %}
+                                        No numbers available
+                                    {% endfor %}
+                                </h5>
+                            </a></li>
+                            {% empty %}
+                            No records found.
+                        {% endfor %}
+                        {% comment %} <hr style="margin:8px auto"> {% endcomment %}
+                    
+                    </ul>
+
+                
+            
+
+       
+          
+
+</div>
+
+{% include 'pagination.html' %}
+    
+
+
+{% endblock %}
+{% block extra_js %}
+    <script>
+        function filter_list() {
+            // Declare variables
+            var input, filter, ul, li, a, i;
+            input = document.getElementById('filter');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName('li');
+        
+            // Loop through all list items, and hide those who don't match the search query
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+        </script>
+    
+
+{% endblock %}

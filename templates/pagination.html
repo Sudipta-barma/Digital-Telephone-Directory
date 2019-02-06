@@ -1,0 +1,16 @@
+{% if persons_list.paginator.num_pages > 1 %}
+    <nav aria-label="...">
+        <ul class="pager">
+
+            <li>পৃষ্ঠা {{ current_page }} , মোট পৃষ্ঠাসংখ্যা {{ total_pages }} </li>
+
+            {% if persons_list.has_previous %}
+                <li><a href="?page={{ persons_list.previous_page_number }}">পূর্ববর্তী পৃষ্ঠা</a></li>
+            {% endif %}
+
+            {% if persons_list.has_next %}
+                <li><a href="?page={{ persons_list.next_page_number }}">পরবর্তী পৃষ্ঠা</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+{% endif %}

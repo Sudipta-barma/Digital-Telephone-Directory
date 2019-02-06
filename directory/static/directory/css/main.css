@@ -1,0 +1,187 @@
+body { padding-top: 70px; }
+
+/*.optional-settings select {*/
+/*display: inline;*/
+/*width: 300px;*/
+/*margin-left: 10px;*/
+/*}*/
+.footer {
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+}
+.social-icons {
+    margin: 30px 0;
+}
+
+footer .social-icons ul.list-inline li a {
+    display: block;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    border-radius: 100%;
+    font-size: 25px;
+    line-height: 50px;
+}
+
+footer .social-icons ul.list-inline li.social-github a {
+    background-color: #333;
+    transition: all .2s ease-in-out;
+}
+
+footer .social-icons ul.list-inline li.social-twitter a {
+    background-color: #1da1f2;
+    transition: all .2s ease-in-out;
+}
+
+footer .social-icons ul.list-inline li.social-facebook a {
+    background-color: #3b5998;
+    transition: all .2s ease-in-out;
+}
+
+footer .social-icons ul.list-inline li.social-google-plus a {
+    background-color: #dd4b39;
+    transition: all .2s ease-in-out;
+}
+
+.main-footer{
+    background-color: #2a2730;
+}
+
+.main-footer ul{
+    margin-top: 10px;
+    padding-left: 0;
+}
+
+.main-footer li{
+    display: inline;
+}
+
+.main-footer li a{
+    color: aliceblue;
+}
+
+.main-footer li+ li{
+    margin-left: 15px;
+}
+
+.codeblock{
+    margin-bottom: 20px;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+}
+
+.codeblock pre{
+    border: none;
+}
+
+.codeblock .code-wrapper{
+    overflow-x: auto;
+}
+
+.post-meta{
+    margin-bottom: 20px;
+}
+
+.toolbar{
+    padding: 4px 2px;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.toolbar span.at-right{
+    float: right;
+}
+
+.toolbar a {
+    padding: 4px 6px;
+    background-color: #e3e3e3;
+    border-radius: 2px;
+}
+
+.toolbar a:hover {
+    text-decoration: none;
+}
+
+.db-form input{
+    width: 300px;
+}
+
+.db-ads {
+    margin-bottom: 20px;
+}
+
+#filter {
+    background-image: url(../images/search.png); /* Add a search icon to input */
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 100%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+}
+
+#myUL {
+    /* Remove default list styling */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#myUL li a {
+    border: 1px solid #ddd; /* Add a border to all links */
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6; /* Grey background color */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove default text underline */
+    font-size: 18px; /* Increase the font-size */
+    color: black; /* Add a black text color */
+    display: block; /* Make it into a block element to fill the whole list */
+}
+
+#myUL li a:hover:not(.header) {
+    background-color: #eee; /* Add a hover effect to all links, except for headers */
+}
+
+.dropdown.dropdown-lg .dropdown-menu {
+    margin-top: -1px;
+    padding: 6px 20px;
+}
+.input-group-btn .btn-group {
+    display: flex !important;
+}
+.btn-group .btn {
+    border-radius: 0;
+    margin-left: -1px;
+}
+.btn-group .btn:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.btn-group .form-horizontal .btn[type="submit"] {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.form-horizontal .form-group {
+    margin-left: 0;
+    margin-right: 0;
+}
+.form-group .form-control:last-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+@media screen and (min-width: 768px) {
+    #adv-search {
+        width: 500px;
+        margin: 0 auto;
+    }
+    .dropdown.dropdown-lg {
+        position: static !important;
+    }
+    .dropdown.dropdown-lg .dropdown-menu {
+        min-width: 500px;
+    }
+}

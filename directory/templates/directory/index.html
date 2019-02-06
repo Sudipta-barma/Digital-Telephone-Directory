@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block main %}
+
+  {% comment %} <div class="row">
+    <div class="col-md-12">
+        <br>
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="{% static 'directory/images/sylhet1.jpg' %}" alt="...">
+                    <div class="carousel-caption">
+                        <h3 style="font-size: 30pt;"><b>সবার জন্য মানসম্মত শিক্ষা</b></h3>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{% static 'directory/images/sylhet2.jpg' %}" alt="...">
+                    <div class="carousel-caption">
+                        <h3 style="font-size: 30pt;"><b>উন্নত প্রযুক্তি, ডিজিটাল পদ্ধতি</b></h3>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{% static 'directory/images/sylhet3.jpeg' %}" alt="...">
+                    <div class="carousel-caption">
+                        <h3 style="font-size: 30pt;"><b>দেশ গড়ার দৃঢ় অঙ্গীকার</b></h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div> <!-- Carousel -->
+    </div> {% endcomment %}
+
+
+
+<form action="{% url 'directory:search' %}"  method="post" id="search" class="form-horizontal">
+   {% csrf_token %}
+   {{ form.as_table }}
+   <div class="row">
+       <br>
+        <button class="btn btn-primary btn-block" type="submit">খুঁজুন</button>
+    </div>
+</form>
+
+
+{% endblock %}
+{% block extra_js %}
+<script>
+    
+        
+</script>
+{% endblock %}
